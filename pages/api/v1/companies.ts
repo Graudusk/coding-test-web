@@ -3,7 +3,6 @@ import { fetchTrendingCompanies } from '@/services/companyService';
 import type { NextApiRequest, NextApiResponse } from 'next';
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse<any>) {
-  // res.status(500).json({ error: 'Internal Server Error' });
   try {
     const { limit = 10, offset = 0 } = req.query;
 
