@@ -1,0 +1,61 @@
+/* Skeleton variants */
+.skeleton {
+  pointer-events: none;
+  border-bottom: 1px solid #f2f2f2;
+  padding: 12px;
+  display: flex;
+
+  align-items: center;
+  gap: 16px;
+
+  .logoSkeleton {
+    background-color: #e5e5e5;
+    animation: pulse 1.5s ease-in-out infinite;
+    width: 40px;
+    height: 40px;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    border-radius: 12px;
+  }
+
+  .infoSkeleton {
+    flex: 1;
+    .titleSkeleton {
+      width: 100px;
+      height: 16px;
+      border-radius: 4px;
+      background-color: #e5e5e5;
+      margin-bottom: 5px;
+      animation: pulse 1.5s ease-in-out infinite;
+    }
+
+    .descriptionSkeleton {
+      height: 13px;
+      width: 90%;
+      border-radius: 4px;
+      background-color: #e5e5e5;
+      animation: pulse 1.5s ease-in-out infinite;
+    }
+  }
+
+  .iconSkeleton {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background-color: #e5e5e5;
+    animation: pulse 1.5s ease-in-out infinite;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
