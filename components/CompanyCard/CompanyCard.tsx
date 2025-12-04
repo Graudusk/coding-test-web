@@ -9,9 +9,16 @@ const inter = Inter({ subsets: ['latin'] });
 
 export default function CompanyCard({ company }: { company: Company }) {
   return (
-    <a href={company.infoUrl ?? '#'} className={styles.companyCard} key={company.id}>
+    <a
+      href={company.infoUrl ?? '#'}
+      className={styles.companyCard}
+      key={company.id}
+      aria-label={`${company.displayName} (${company.ticker}) details`}
+    >
       <div
         className={styles.logo}
+        role="img"
+        aria-label={`${company.displayName} logo`}
         style={{
           backgroundImage: `url("${company.image}")`,
           backgroundColor: company.brandColor ?? '#fff',
@@ -22,7 +29,7 @@ export default function CompanyCard({ company }: { company: Company }) {
         <p className={[inter.className, styles.description].join(' ')}>{company.description}</p>
       </div>
       <div className={styles.icon}>
-        <Image src={chevronIcon} alt={company.displayName} />
+        <Image src={chevronIcon} alt="" aria-hidden="true" />
       </div>
     </a>
   );
