@@ -8,7 +8,7 @@ const inter = Inter({ subsets: ['latin'] });
 export default function Page() {
   return (
     <main>
-      <h2 className={inter.className}>Quartr</h2>
+      <h1 className={inter.className}>Quartr</h1>
       <p className={`${inter.className} lead`}>Trending companies</p>
 
       <Suspense fallback={<LoadingSkeleton />}>
