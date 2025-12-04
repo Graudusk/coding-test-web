@@ -16,6 +16,7 @@ const config: Config = {
   moduleNameMapper: {
     '^@/(.*)$': '<rootDir>/$1',
     '^@components/(.*)$': '<rootDir>/components/$1',
+    '^@data/(.*)$': '<rootDir>/data/$1',
     '^@lib/(.*)$': '<rootDir>/lib/$1',
     '^.+\\.(css|scss)$': 'identity-obj-proxy',
   },
