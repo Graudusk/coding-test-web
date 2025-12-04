@@ -8,8 +8,9 @@ jest.mock('@next/font/google', () => ({
   Inter: () => ({ className: 'inter' }),
 }));
 
-jest.mock('@/components/CompanyListWrapper/CompanyListWrapper', () => ({
-  CompanyListWrapper: () => <div data-testid="company-list-wrapper">mocked list</div>,
+jest.mock('@/components/CompanyList/CompanyList', () => ({
+  __esModule: true,
+  default: () => <div data-testid="company-list">mocked list</div>,
 }));
 
 jest.mock('@/components/LoadingSkeleton/LoadingSkeleton', () => ({
@@ -22,6 +23,6 @@ describe('App Page smoke test', () => {
 
     expect(screen.getByRole('heading', { name: 'Quartr', level: 1 })).toBeInTheDocument();
     expect(screen.getByText(/trending companies/i)).toBeInTheDocument();
-    expect(screen.getByTestId('company-list-wrapper')).toBeInTheDocument();
+    expect(screen.getByTestId('company-list')).toBeInTheDocument();
   });
 });

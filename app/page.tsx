@@ -1,4 +1,4 @@
-import { CompanyListWrapper } from '@/components/CompanyListWrapper/CompanyListWrapper';
+import CompanyList from '@/components/CompanyList/CompanyList';
 import { LoadingSkeleton } from '@/components/LoadingSkeleton/LoadingSkeleton';
 import { Inter } from '@next/font/google';
 import { Suspense } from 'react';
@@ -13,7 +13,7 @@ export default function Page() {
 
       <Suspense fallback={<LoadingSkeleton />}>
         {/* @ts-expect-error Async Server Component */}
-        <CompanyListWrapper />
+        <CompanyList />
       </Suspense>
     </main>
   );

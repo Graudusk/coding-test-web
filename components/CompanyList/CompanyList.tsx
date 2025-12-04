@@ -1,9 +1,9 @@
-'use client';
-
-import { Company } from '@/types/Company';
+import { getCompanies } from '@/lib/api';
 import CompanyCard from '../CompanyCard/CompanyCard';
 
-export default function CompanyList({ companies }: { companies: Company[] }) {
+export default async function CompanyList() {
+  const companies = await getCompanies();
+
   if (companies.length === 0) {
     return <p>No companies found</p>;
   }
