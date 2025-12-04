@@ -20,7 +20,7 @@ describe('App Page smoke test', () => {
   it('renders heading, lead text, and the company list wrapper', () => {
     render(<Page />);
 
-    expect(screen.getByRole('heading', { name: 'Quartr' })).toBeInTheDocument();
+    expect(screen.getByRole('heading', { name: 'Quartr', level: 1 })).toBeInTheDocument();
     expect(screen.getByText(/trending companies/i)).toBeInTheDocument();
     expect(screen.getByTestId('company-list-wrapper')).toBeInTheDocument();
   });
