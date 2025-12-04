@@ -1,7 +1,7 @@
 import { data } from '@data/companies.mock';
 import { normalizeCompany } from './normalizeCompany';
 
-export async function fetchTrendingCompanies(offset = '0', limit = '10') {
+export async function fetchTrendingCompanies(limit = '10', offset = '0') {
   const startIndex = Number(offset);
   const endIndex = startIndex + Number(limit);
   const companies = data.data.map(normalizeCompany);
