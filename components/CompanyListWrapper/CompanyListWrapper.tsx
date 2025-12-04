@@ -4,5 +4,6 @@ import { ReactElement } from 'react';
 
 export const CompanyListWrapper = async (): Promise<ReactElement> => {
   const companies = await getCompanies();
+
   return <CompanyList companies={companies} />;
 };
