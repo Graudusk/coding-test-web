@@ -12,7 +12,9 @@ body {
 
 body {
   color: #333;
-  background: #fff;
+  background: #f1f1f1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 a {
@@ -21,8 +23,26 @@ a {
 }
 
 main {
-  width: 800px;
-  margin: auto;
+  max-width: 960px;
+  width: 100%;
+  padding: 0 1rem;
+  margin: 0 auto;
+}
+
+.hero {
+  text-align: center;
+  padding: 48px 0 32px;
+}
+
+.hero h1 {
+  font-size: 40px;
+  line-height: 44px;
+  margin-bottom: 18px;
+}
+
+.hero .lead {
+  font-size: 18px;
+  line-height: 24px;
 }
 
 p.lead {
