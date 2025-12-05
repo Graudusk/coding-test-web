@@ -1,6 +1,6 @@
 import { EventReport } from '@/types/EventReport';
 import { Inter } from '@next/font/google';
-import styles from './CompanyCardEvents.module.scss';
+import styles from './CompanyCardEvent.module.scss';
 
 const inter = Inter({ subsets: ['latin'] });
 
