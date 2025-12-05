@@ -44,10 +44,12 @@ const companyWithMixedEvents: Company = {
 };
 
 describe('CompanyCardEvents', () => {
-  it('renders report and PDF links when available', () => {
+  it('renders events list with header metadata and available links', () => {
     render(<CompanyCardEvents company={companyWithMixedEvents} />);
 
-    expect(screen.getByText(/events/i)).toBeInTheDocument();
+    expect(screen.getByRole('heading', { level: 3, name: /events/i })).toBeInTheDocument();
+    expect(screen.getByLabelText('Example Inc events')).toHaveAttribute('id', 'company-7-events');
+    expect(screen.getAllByRole('listitem')).toHaveLength(companyWithMixedEvents.events.length);
     expect(screen.getByText('Q2 2023')).toBeInTheDocument();
     expect(screen.getByText('Q3 2023')).toBeInTheDocument();
 
@@ -61,11 +63,12 @@ describe('CompanyCardEvents', () => {
     expect(pdfLinks[0]).toHaveAttribute('href', 'https://example.com/pdf-a');
   });
 
-  it('omits PDF link when it does not exist', () => {
-    render(<CompanyCardEvents company={companyWithMixedEvents} />);
+  it('shows an empty state when no events are present', () => {
+    const companyWithoutEvents: Company = { ...companyWithMixedEvents, events: [] };
 
-    const pdfLinks = screen.getAllByText(/view pdf/i);
-    expect(pdfLinks).toHaveLength(1);
-    expect(pdfLinks[0]).toHaveAttribute('href', 'https://example.com/pdf-a');
+    render(<CompanyCardEvents company={companyWithoutEvents} />);
+
+    expect(screen.getByText(/no events available/i)).toBeInTheDocument();
+    expect(screen.queryByRole('list')).not.toBeInTheDocument();
   });
 });

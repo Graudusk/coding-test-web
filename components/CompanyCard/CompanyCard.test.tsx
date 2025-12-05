@@ -37,15 +37,26 @@ describe('CompanyCard', () => {
   it('toggles events visibility when button is clicked', () => {
     render(<CompanyCard company={companyWithEvents} />);
 
-    expect(screen.queryByText('Q1 2024')).not.toBeInTheDocument();
+    const toggleButton = screen.getByRole('button', { name: /show more/i });
 
-    fireEvent.click(screen.getByRole('button', { name: /show more/i }));
+    expect(screen.queryByText('Q1 2024')).not.toBeInTheDocument();
+    expect(toggleButton).toHaveAttribute('aria-expanded', 'false');
+    expect(toggleButton).toHaveAttribute('aria-controls', 'company-42-events');
+    expect(screen.getByRole('link', { name: /company info/i })).toHaveAttribute(
+      'href',
+      'https://example.com/info'
+    );
+
+    fireEvent.click(toggleButton);
 
     expect(screen.getByText('Q1 2024')).toBeInTheDocument();
+    expect(toggleButton).toHaveAttribute('aria-expanded', 'true');
+    expect(screen.getByLabelText('Test Company events')).toHaveAttribute('id', 'company-42-events');
     expect(screen.getByRole('link', { name: /view report/i })).toHaveAttribute('href', 'https://example.com/report');
     expect(screen.getByRole('link', { name: /view pdf/i })).toHaveAttribute('href', 'https://example.com/pdf');
 
     fireEvent.click(screen.getByRole('button', { name: /hide/i }));
     expect(screen.queryByText('Q1 2024')).not.toBeInTheDocument();
+    expect(toggleButton).toHaveAttribute('aria-expanded', 'false');
   });
 });
