@@ -1,9 +1,8 @@
-import Head from 'next/head';
-
-export default function CustomHead() {
+export default function Head() {
   return (
-    <Head>
+    <>
       <title>Quartr</title>
-    </Head>
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+    </>
   );
 }
