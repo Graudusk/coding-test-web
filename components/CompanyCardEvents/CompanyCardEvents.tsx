@@ -1,6 +1,6 @@
 import { Company } from '@/types/Company';
 import { Inter } from '@next/font/google';
-import CompanyCardEvent from './CompanyCardEvent';
+import CompanyCardEvent from '../CompanyCardEvent/CompanyCardEvent';
 import styles from './CompanyCardEvents.module.scss';
 
 const inter = Inter({ subsets: ['latin'] });
