@@ -33,6 +33,7 @@ describe('normalizeCompany', () => {
       description: 'A sample company',
       infoUrl: 'https://example.com',
       brandColor: '#123456',
+      events: [],
     });
   });
 

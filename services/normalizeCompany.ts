@@ -14,5 +14,6 @@ export function normalizeCompany(company: RawCompany): Company {
     description: company.description,
     infoUrl: company.infoUrl ?? null,
     brandColor: company.colorSettings?.brandColor ?? null,
+    events: company.events,
   };
 }
