@@ -8,8 +8,10 @@ const inter = Inter({ subsets: ['latin'] });
 export default function Page() {
   return (
     <main>
-      <h1 className={inter.className}>Quartr</h1>
-      <p className={`${inter.className} lead`}>Trending companies</p>
+      <div className="hero">
+        <h1 className={inter.className}>Quartr</h1>
+        <p className={`${inter.className} lead`}>Trending companies</p>
+      </div>
 
       <Suspense fallback={<LoadingSkeleton />}>
         {/* @ts-expect-error Async Server Component */}
