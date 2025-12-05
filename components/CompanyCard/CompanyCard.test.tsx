@@ -42,10 +42,7 @@ describe('CompanyCard', () => {
     expect(screen.queryByText('Q1 2024')).not.toBeInTheDocument();
     expect(toggleButton).toHaveAttribute('aria-expanded', 'false');
     expect(toggleButton).toHaveAttribute('aria-controls', 'company-42-events');
-    expect(screen.getByRole('link', { name: /company info/i })).toHaveAttribute(
-      'href',
-      'https://example.com/info'
-    );
+    expect(screen.getByRole('link', { name: /company info/i })).toHaveAttribute('href', 'https://example.com/info');
 
     fireEvent.click(toggleButton);
 
