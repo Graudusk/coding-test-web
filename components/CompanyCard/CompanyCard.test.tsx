@@ -42,10 +42,7 @@ describe('CompanyCard', () => {
     fireEvent.click(screen.getByRole('button', { name: /show more/i }));
 
     expect(screen.getByText('Q1 2024')).toBeInTheDocument();
-    expect(screen.getByRole('link', { name: /view report/i })).toHaveAttribute(
-      'href',
-      'https://example.com/report',
-    );
+    expect(screen.getByRole('link', { name: /view report/i })).toHaveAttribute('href', 'https://example.com/report');
     expect(screen.getByRole('link', { name: /view pdf/i })).toHaveAttribute('href', 'https://example.com/pdf');
 
     fireEvent.click(screen.getByRole('button', { name: /hide/i }));

@@ -22,11 +22,21 @@ export default function CompanyCardEvent({ event }: CompanyCardEventProps) {
       </div>
 
       <div className={styles.links}>
-        <a className={`${inter.className} ${styles.link}`} href={event.reportUrl} target="_blank" rel="noopener noreferrer">
+        <a
+          className={`${inter.className} ${styles.link}`}
+          href={event.reportUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           View report
         </a>
         {event.pdfUrl && (
-          <a className={`${inter.className} ${styles.link}`} href={event.pdfUrl} target="_blank" rel="noopener noreferrer">
+          <a
+            className={`${inter.className} ${styles.link}`}
+            href={event.pdfUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             View PDF
           </a>
         )}

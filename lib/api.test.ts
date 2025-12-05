@@ -1,6 +1,6 @@
-import { getCompanies } from './api';
 import { fetchTrendingCompanies } from '@/services/companyService';
 import { Company } from '@/types/Company';
+import { getCompanies } from './api';
 
 jest.mock('@/services/companyService', () => ({
   fetchTrendingCompanies: jest.fn(),
@@ -19,6 +19,7 @@ const sampleCompanies: Company[] = [
     description: 'A sample company',
     infoUrl: 'https://example.com',
     brandColor: '#000',
+    events: [],
   },
 ];
 
